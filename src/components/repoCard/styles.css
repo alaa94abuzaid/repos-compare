@@ -1,0 +1,33 @@
+.card-container {
+  background-color: white;
+}
+
+.content {
+  padding: 20px 20px 0;
+}
+
+.card-header {
+  align-items: center;
+  border-bottom: solid 1px lightgrey;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.remove {
+  border-top: solid 1px lightgrey;
+  padding: 10px;
+}
+
+.remove button {
+  background-color: unset;
+  border: none;
+  color: brown;
+  cursor: pointer;
+}
+
+.repo-link {
+  color: unset;
+  text-decoration: none;
+}

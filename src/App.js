@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/searchBar'
+import { useEffect, useState } from 'react';
+import CardsContainer from './components/cardsContainer'
 
 function App() {
+  const [urls, setUrls] = useState([])
+
+  const handleRemove = (url) => {
+    const index = urls.indexOf(url);
+    console.log(index);
+    if (index > -1) {
+      const x = [...urls]
+      x.splice(index, 1)
+      console.log('z', x);
+      setUrls(x)
+    }
+  }
+
+  useEffect(() => {
+    console.log(urls)
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar urls={urls} setUrls={setUrls}/>
+      <CardsContainer handleRemove={handleRemove} setUrls={setUrls} urls={urls}/>
     </div>
   );
 }
